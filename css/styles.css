@@ -1,0 +1,601 @@
+/* FINDINGS -------------------------------------------------------- */
+/* CTRL C + CTRL K to comment a line of code */
+
+/* IMPORTING FONTS ------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap"); /* spartan font with 400 and 700 weights */
+
+/* LAYOUT ---------------------------------------------------------- */
+* {
+  box-sizing: border-box; /* Reset margins and border box layout */
+  margin: 0;
+  padding: 0;
+  font-family: "Spartan", sans-serif; /* Unique font for the app */
+}
+
+/* COLORS ---------------------------------------------------------- */
+/* Root element contains the colors for the default theme (left one) */
+:root {
+  /* Defining BG Colors */
+  --bg-1: hsl(222, 26%, 31%);
+  --bg-2: hsl(223, 31%, 20%);
+  --bg-3: hsl(224, 36%, 15%);
+  /* Defining Button Colors */
+  --del-reset-button-color: hsl(225, 21%, 49%);
+  --del-reset-button-hover: hsl(225, 40%, 50%);
+  --del-reset-button-shadow: hsl(224, 28%, 35%);
+  --equal-button-color: hsl(6, 63%, 50%);
+  --equal-button-hover: hsl(6, 80%, 50%);
+  --equal-button-shadow: hsl(6, 70%, 34%);
+  --number-operation-button-color: hsl(30, 25%, 89%);
+  --number-operation-button-hover: hsl(30, 5%, 70%);
+  --number-operation-button-shadow: hsl(28, 16%, 65%);
+  /* Defining Text Colors */
+  --textcolor-1: hsl(221, 14%, 31%); /* number and operation text color */
+  --textcolor-2: hsl(0, 0%, 100%); /* everything else */
+  /* Defining colors in variables */
+  --bg-1-var: var(--bg-1);
+  --bg-2-var: var(--bg-2);
+  --bg-3-var: var(--bg-3);
+
+  --del-reset-button-color-var: var(--del-reset-button-color);
+  --del-reset-button-hover-var: var(--del-reset-button-hover);
+  --del-reset-button-shadow-var: var(--del-reset-button-shadow);
+  --del-reset-button-text-var: var(--textcolor-2);
+  --equal-button-color-var: var(--equal-button-color);
+  --equal-button-hover-var: var(--equal-button-hover);
+  --equal-button-shadow-var: var(--equal-button-shadow);
+  --equal-button-text-var: var(--textcolor-2);
+  --number-operation-button-color-var: var(--number-operation-button-color);
+  --number-operation-button-hover-var: var(--number-operation-button-hover);
+  --number-operation-button-shadow-var: var(--number-operation-button-shadow);
+
+  --primary-text-color-var: var(--textcolor-1);
+  --secondary-text-color-var: var(--textcolor-2);
+  --third-text-color-var: var(--textcolor-2);
+}
+/* .Theme-2 contains colors for the middle theme */
+.theme-2 {
+  /* Defining BG Colors */
+  --bg-1: hsl(0, 0%, 90%);
+  --bg-2: hsl(0, 5%, 81%);
+  --bg-3: hsl(0, 0%, 93%);
+  /* Defining Button Colors */
+  --del-reset-button-color: hsl(185, 42%, 37%);
+  --del-reset-button-hover: hsl(185, 30%, 50%);
+  --del-reset-button-shadow: hsl(185, 58%, 25%);
+  --equal-button-color: hsl(25, 98%, 40%);
+  --equal-button-hover: hsl(25, 75%, 50%);
+  --equal-button-shadow: hsl(25, 99%, 27%);
+  --number-operation-button-color: hsl(45, 7%, 89%);
+  --number-operation-button-hover: hsl(45, 3%, 73%);
+  --number-operation-button-shadow: hsl(35, 11%, 61%);
+  /* Defining Text Colors */
+  --textcolor-1: hsl(60, 10%, 19%); /* everthing except: DEL, RESET, = */
+  --textcolor-2: hsl(0, 0%, 100%); /* DEL, RESET, = */
+  /* Defining colors in variables */
+  --bg-1-var: var(--bg-1);
+  --bg-2-var: var(--bg-2);
+  --bg-3-var: var(--bg-3);
+
+  --del-reset-button-color-var: var(--del-reset-button-color);
+  --del-reset-button-hover-var: var(--del-reset-button-hover);
+  --del-reset-button-shadow-var: var(--del-reset-button-shadow);
+  --del-reset-button-text-var: var(--textcolor-2);
+  --equal-button-color-var: var(--equal-button-color);
+  --equal-button-hover-var: var(--equal-button-hover);
+  --equal-button-shadow-var: var(--equal-button-shadow);
+  --equal-button-text-var: var(--textcolor-2);
+  --number-operation-button-color-var: var(--number-operation-button-color);
+  --number-operation-button-hover-var: var(--number-operation-button-hover);
+  --number-operation-button-shadow-var: var(--number-operation-button-shadow);
+
+  --primary-text-color-var: var(--textcolor-1);
+  --secondary-text-color-var: var(--textcolor-2);
+  --third-text-color-var: var(--textcolor-1);
+}
+/* .Theme-3 contains colors for the right theme */
+.theme-3 {
+  /* Defining BG Colors */
+  --bg-1: hsl(268, 75%, 9%);
+  --bg-2: hsl(268, 71%, 12%);
+  /* Defining Button Colors */
+  --del-reset-button-color: hsl(281, 89%, 26%);
+  --del-reset-button-hover: hsl(281, 73%, 40%);
+  --del-reset-button-shadow: hsl(285, 91%, 52%);
+  --equal-button-color: hsl(176, 100%, 44%);
+  --equal-button-hover: hsl(176, 75%, 31%);
+  --equal-button-shadow: hsl(177, 92%, 70%);
+  --number-operation-button-color: hsl(268, 47%, 21%);
+  --number-operation-button-hover: hsl(268, 35%, 33%);
+  --number-operation-button-shadow: hsl(290, 70%, 36%);
+  /* Defining Text Colors */
+  --textcolor-1: hsl(52, 100%, 62%);
+  --textcolor-2: hsl(198, 20%, 13%);
+  --textcolor-3: hsl(0, 0%, 100%);
+  /* Defining colors in variables */
+  --bg-1-var: var(--bg-1);
+  --bg-2-var: var(--bg-2);
+  --bg-3-var: var(--bg-2);
+
+  --del-reset-button-color-var: var(--del-reset-button-color);
+  --del-reset-button-hover-var: var(--del-reset-button-hover);
+  --del-reset-button-shadow-var: var(--del-reset-button-shadow);
+  --del-reset-button-text-var: var(var--textcolor-3);
+  --equal-button-color-var: var(--equal-button-color);
+  --equal-button-hover-var: var(--equal-button-hover);
+  --equal-button-shadow-var: var(--equal-button-shadow);
+  --equal-button-text-var: var(--textcolor-2);
+  --number-operation-button-color-var: var(--number-operation-button-color);
+  --number-operation-button-hover-var: var(--number-operation-button-hover);
+  --number-operation-button-shadow-var: var(--number-operation-button-shadow);
+
+  --func-key-text-color-var: var(--textcolor-3);
+  --primary-text-color-var: var(--textcolor-1);
+  --third-text-color-var: var(--textcolor-1);
+  --secondary-text-color-var: var(--textcolor-2);
+  --title-text-color-var: var(--textcolor-1);
+}
+
+/* HTML ELEMENTS -------------------------------------------------------------------- */
+footer p {
+  color: var(--third-text-color-var);
+  text-align: center; /* If text-align were not centered, "Coded by.." would be left aligned (left alignment is default) */
+  font-size: 0.75rem;
+  line-height: 1.3rem; /* line-height serves as separation between Challenge by... & Coded by... */
+}
+/* from 800px width to 854px width we have some blackberry weird phones that have a 480px height. So, we have to adjust for
+those mobiles */
+@media (max-width: 854px) {
+  footer p {
+    font-size: 0.65rem;
+  }
+}
+/* <800px width we have more normal phones (with lenghtier height), so we have to roll back to previous config */
+@media (max-width: 800px) {
+  footer p {
+    font-size: 0.75rem; /* As you can see, font-size now is the same as previous */
+  }
+}
+
+footer a {
+  color: var(--equal-button-color-var);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline; /* When we hover, we want an underline to the link */
+}
+
+/* TAG SELECTORS -------------------------------------------------------------------- */
+/* Everything = Section Calculator + Footer */
+.everything {
+  min-height: 100vh; /* previously, I used height: 100vh. That's useful, because if your calculator + footer height is less than 100vh, then all the HTML
+  would be 100vh and then you can center the structure (if no height were determined, then you would have only the height of calculator + footer). But,
+  the problem with height: 100vh is when you have a device with a low height, and calculator + footer height is larger than the device's one. In those
+  cases, if you have height: 100vh, then you will se blank spaces at the end of the page. But that's not happening with min-height: 100vh; Min-height
+  allows the page to overflow x if you have that the app height is larger than device height */
+  background-color: var(--bg-1-var);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* we use align-items center (and not align-content center) because we have a 1 row (that we give column orientation) child
+  elements. See difference between align-items and align content in: https://codepen.io/lasantoneta/pen/BaRPxeM */
+  row-gap: 1rem; /* we put some gap between Section Calculator and Footer */
+  max-height: 64rem; /* 1024px. Max height to cap the height for ultra height tablets (like Microsoft surface Pro 3 & Apple Ipad Pro */
+}
+/* for low width devices, we diminsh the gap between section calculator and footer */
+@media (max-width: 384px) {
+  .everything {
+    row-gap: 0.1rem;
+  }
+}
+
+/* Section calculator has 4 components: calc-title, theme-box, display & calculator-box */
+.calculator {
+  display: grid;
+  grid-template-areas:
+    "calc theme"
+    "display display"
+    "calculator-box calculator-box"; /* calc & theme are two distinct colums, the remaining rows are a "span-2" column style */
+  gap: 1rem; /* gap between rows and columns. Only affects vertical separation between calc-title and theme-box */
+  width: 100%; /* for low width devices, we want the calculator to occupy all the width (less the padding defined below) */
+  max-width: 35.625rem; /* 570px. After some point, we don't want to keep increasing calculator section width */
+  padding: 0.9rem; /* this padding acts like a margin when we have a situation that calculator width = 100% device width (when width is less than
+  max-width defined above) */
+}
+/* Escalating max-width for different screen resolutions */
+@media (max-width: 1366px) {
+  .calculator {
+    max-width: 31.875rem;
+  }
+}
+@media (max-width: 1000px) {
+  .calculator {
+    max-width: 30rem;
+  }
+}
+@media (max-width: 854px) {
+  .calculator {
+    max-width: 20.625rem;
+    gap: 0.75rem;
+  }
+}
+@media (max-width: 800px) {
+  .calculator {
+    max-width: 31.875rem;
+    gap: 1rem;
+  }
+}
+
+/* calc-title = h1 (calc) */
+.calc-title {
+  grid-area: calc; /* name of the column (section calculator grid) */
+  align-self: end; /* by default, calc would be aligned at the top */
+  font-size: 2rem;
+  color: var(--third-text-color-var);
+}
+/* escalating h1 calc size for different resolutions */
+@media (max-width: 854px) {
+  .calc-title {
+    font-size: 1.375rem;
+  }
+}
+@media (max-width: 800px) {
+  .calc-title {
+    font-size: 2rem;
+  }
+}
+
+/* theme-box = theme-box-numbers (1, 2, 3) + theme-box-title (THEME) + theme-box-switchbox (circle switchbox) */
+.theme-box {
+  grid-area: theme; /* Section calculator grid column name */
+  display: grid;
+  grid-template-areas:
+    ". theme-box-numbers"
+    "theme-theme switch-box"; /* We define a 2x2 matrix. Because we have the switch-box with a defined width (78px), every column will have
+    that width. So, all the theme-box width would total 78x2 = 156px width. The "." symbolizes a column without name defined, which in this case
+    is an empty column */
+  justify-self: end; /* by default, justify-self is stretch, which occupies all the width of the column (in this case, the Section calculator column).
+  When we use justify-self: end, we only use the width defined by theme-box grid. Try removing this line and see what happens! */
+
+  /* if this two lines were not present, elements in the grid will only ocuppy their defined widht. If
+  no width were defined, they would get the auto width (width of the larger element). Because we are using 1fr unit, we get the width of the larger
+  column element (78px for the switch-box). Moreover, this unit accounts for the remaining space after padding and gaps of the grid. */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* theme-box-numbers = p + p + p */
+.theme-box-numbers {
+  grid-area: theme-box-numbers; /* theme-box grid column name */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* remember: space-between gets the most space in between elements, space around a bit less */
+  font-weight: 700; /* bold */
+  font-size: 0.8rem;
+  align-items: flex-end; /* in order to be near the switch-box */
+  padding: 0 0.55rem 0.25rem; /* separation between numbers would be too high if this line were not present */
+  color: var(--third-text-color-var);
+}
+/* escalating size of the numbers for different screen resolutions */
+@media (max-width: 854px) {
+  .theme-box-numbers {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 800px) {
+  .theme-box-numbers {
+    font-size: 0.8rem;
+  }
+}
+
+/* Little adjustment to center the "2" paragraph */
+.second {
+  padding-left: 0.2rem;
+}
+
+/* theme-box-title = h1 (theme) */
+.theme-box-title {
+  grid-area: theme-theme; /* theme-box grid column name */
+  text-transform: uppercase; /* uppercase the css */
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  align-self: end; /* if not present, theme would be a litte more upstairs */
+  padding-bottom: 0.1875rem; /* adjustment to center theme */
+  color: var(--third-text-color-var);
+}
+/* escalating size for different screen resolutions */
+@media (max-width: 854px) {
+  .theme-box-title {
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 800px) {
+  .theme-box.title {
+    font-size: 0.75rem;
+  }
+}
+
+/* theme-box-switchbox = form (input + input + input) + div */
+.theme-box-switchbox {
+  grid-area: switch-box; /* theme-box grid columnn name */
+  width: 78px; /* defining the width of one element of the grid. This, in turn, make all the columns to have a 78px width (because of 1fr unit) */
+  background-color: var(--bg-3-var);
+  padding: 0.26rem 0.2rem; /* if no padding were defined, red circle switchbox will be glued to the edges */
+  border-radius: 1rem; /* make it circular! */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* position relative to use the div with position absolute and make it move inside the switchbox */
+}
+
+.theme-box-switchbox input {
+  height: 1rem;
+  width: 1.4rem; /* height and width of the radio button */
+  cursor: pointer;
+  opacity: 0; /* make the radio buttons invisible */
+}
+
+.theme-box-switchbox div {
+  height: 1rem;
+  width: 1rem; /* height and width of the red circular switch-box */
+  background-color: var(--equal-button-color-var);
+  position: absolute; /* absolute, in order to move it around the switch-box */
+  border-radius: 50%; /* make it perfectly circular, baby! */
+  transition: all 0.15s ease-in-out; /* when a property of the circular switch-box changes, the transition is smooth. The only two properties that
+  changes for the circular swithbox are: value and color. So, when value changes, the position gets altered */
+}
+
+/* input element, whose value property = 1 and is checked, for that element, grab all the siblings that come after that element (which is the div)
+and then change left position */
+input[value="1"]:checked ~ div {
+  left: 0.25rem; /* 4px */
+}
+
+input[value="2"]:checked ~ div {
+  left: 1.9375rem;
+}
+
+input[value="3"]:checked ~ div {
+  left: 3.625rem;
+}
+
+/* missing check: see what happens when you have a large number! */
+/* display = div previous-display + div-current-display */
+.display {
+  grid-area: display; /* section calculator grid column name */
+  height: 8.125rem; /* height of the element */
+  width: 100%; /* this is implicit in the section calculator width: 100% */
+  background-color: var(--bg-3-var);
+  border-radius: 0.625rem; /* make it more like circular, baby!! */
+  color: var(--third-text-color-var);
+  padding: 1rem; /* if padding were not defined, display numbers would be glued to the edge */
+  display: grid;
+  grid-template-areas:
+    "previous-operand"
+    "current-operand"; /* 2x1 matrix. */
+  overflow-x: hidden; /* because if you have a large enough number the div and all the calculator would extend right. Try removing it and adding
+  a large enough number to see what happens */
+  /* height is 100% but after row gap, padding and margin */
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 0.5rem; /* column and row gap */
+  text-align: right;
+}
+/* escalating display height for different screen resolutions */
+@media (max-width: 1366px) {
+  .display {
+    height: 6.875rem;
+  }
+}
+@media (max-width: 1000px) {
+  .display {
+    height: 5.9375rem;
+  }
+}
+@media (max-width: 854px) {
+  .display {
+    height: 4.6875rem;
+  }
+}
+@media (max-width: 800px) {
+  .display {
+    height: 6.875rem;
+  }
+}
+@media (max-width: 384px) {
+  .display {
+    height: 5.625rem;
+  }
+}
+
+/* difference between .display > div and .display div -> the former grabs only child elements and the latter all descendant elements */
+.display > div {
+  justify-self: end; /* if not, display numbers would be right aligned */
+  font-weight: 700; /* make them bold */
+}
+
+/* current-display font size */
+.current-display {
+  font-size: 3rem;
+}
+@media (max-width: 1000px) {
+  .current-display {
+    font-size: 2rem;
+  }
+}
+/* escalating for different screen resolutions */
+@media (max-width: 854px) {
+  .current-display {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 800px) {
+  .current-display {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 384px) {
+  .current-display {
+    font-size: 2rem;
+  }
+}
+
+/* calculator-box = all the numbers of the calculator */
+.calculator-box {
+  grid-area: calculator-box; /* section calculator grid column name */
+  display: grid; /* display own grid */
+
+  /* defining a 5x4 matrix. Room for 20 elements, but RESET and EQUAL spans two, so room for 18! */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 30.625rem; /* defining height of the whole structure */
+  padding: 2rem; /* if not, buttons would be glued to the edge */
+  gap: 1.8rem 1.5rem; /* row gap column gap*/
+  background-color: var(--bg-2-var);
+  border-radius: 0.625rem; /* make it a bit circular, baby! */
+}
+/* escalating calculator box for different heights */
+@media (max-width: 1366px) {
+  .calculator-box {
+    height: 26.25rem;
+  }
+}
+/* for max-width: 1000px & 854px special padding and gaps needs to be defined. If not, calculator would not enter in the device */
+@media (max-width: 1000px) {
+  .calculator-box {
+    height: 22.1875rem;
+    padding: 1.5rem;
+    gap: 1.2rem 1rem;
+  }
+}
+@media (max-width: 854px) {
+  .calculator-box {
+    height: 14.375rem;
+    padding: 1rem;
+    gap: 1rem 0.8rem;
+  }
+}
+@media (max-width: 800px) {
+  .calculator-box {
+    height: 26.25rem;
+    padding: 2rem;
+    gap: 1.8rem 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .calculator-box {
+    gap: 1.2rem 0.9rem;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 384px) {
+  .calculator-box {
+    height: 21.875rem;
+  }
+}
+
+/* Common properties for all the buttons */
+.calculator-box button {
+  font-weight: 700; /* bold */
+  border: 0; /* buttons without borders */
+  border-radius: 0.625rem; /* make it a bit rounded */
+  transition: all 0.15s ease-in-out; /* when you click a button (active pseudo class), box shadow changes, and that change is smooth (transition defined) */
+}
+/* for mobile view, buttons are a bit more squared */
+@media (max-width: 480px) {
+  .calculator-box button {
+    border-radius: 0.3125rem;
+  }
+}
+
+/* common pointer for all button hover */
+.calculator-box button:hover {
+  cursor: pointer;
+}
+
+/* common translate for all button active state */
+.calculator-box button:active {
+  transform: translateY(0.3rem);
+}
+
+/* Specific properties for the buttons */
+.number-operation {
+  background-color: var(--number-operation-button-color-var);
+  color: var(--primary-text-color-var);
+  box-shadow: 0 0.3rem 0 0 var(--number-operation-button-shadow-var); /* 0.3rem of Y shadow give the 3d impression */
+  font-size: 1.8rem; /* font size for the numbers */
+}
+/* escalating font sizes for the numbers, for different screen resolutions */
+@media (max-width: 854px) {
+  .number-operation {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 800px) {
+  .number-operation {
+    font-size: 1.8rem;
+  }
+}
+
+/* changing color when hovering */
+.number-operation:hover {
+  background-color: var(--number-operation-button-hover-var);
+}
+
+/* eliminating box shadow when button is active (pressed) */
+.number-operation:active {
+  box-shadow: 0 0 0 0;
+}
+
+.del-reset {
+  background-color: var(--del-reset-button-color-var);
+  color: var(--del-reset-button-text-var);
+  box-shadow: 0 0.3rem 0 0 var(--del-reset-button-shadow-var);
+  font-size: 1.2rem;
+  text-transform: uppercase; /* make DEL and RESET, UPPERCASE */
+}
+/* escalating for different screen resolutions */
+@media (max-width: 854px) {
+  .del-reset {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 800px) {
+  .del-reset {
+    font-size: 1.2rem;
+  }
+}
+.del-reset:hover {
+  background-color: var(--del-reset-button-hover-var);
+}
+.del-reset:active {
+  box-shadow: 0 0 0 0 var(--del-reset-button-color-var);
+}
+.equal {
+  background-color: var(--equal-button-color-var);
+  color: var(--equal-button-text-var);
+  box-shadow: 0 0.3rem 0 0 var(--equal-button-shadow-var);
+  font-size: 1.4rem;
+}
+@media (max-width: 854px) {
+  .equal {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 800px) {
+  .equal {
+    font-size: 1.4rem;
+  }
+}
+.equal:hover {
+  background-color: var(--equal-button-hover-var);
+}
+.equal:active {
+  box-shadow: 0 0 0 0 var(--equal-button-color-var);
+}
+
+/* lastly, RESET and EQUAL spans two columns */
+.span-2 {
+  grid-column: span 2;
+}

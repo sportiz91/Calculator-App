@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./images/favicon-32x32.png" />
+    <!-- starting with ./ to root to this folder and don't have to change it in the github when I upload it. /images/... doesn't work
+    and images/... only works locally -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Calculator App | Frontend Mentor Challenge</title>
+  </head>
+
+  <body>
+    <div class="everything">
+      <!-- everthing = section calculator + footer -->
+      <section class="calculator">
+        <h1 class="calc-title">calc</h1>
+        <div class="theme-box">
+          <h1 class="theme-box-title">theme</h1>
+          <div class="theme-box-numbers">
+            <p>1</p>
+            <p class="second">2</p>
+            <p>3</p>
+          </div>
+          <form class="theme-box-switchbox">
+            <input
+              type="radio"
+              name="radio-buttons"
+              class="radio-toggle"
+              value="1"
+              checked
+            />
+            <input
+              type="radio"
+              name="radio-buttons"
+              class="radio-toggle"
+              value="2"
+            />
+            <input
+              type="radio"
+              name="radio-buttons"
+              class="radio-toggle"
+              value="3"
+            />
+            <div class="theme-box-switcher"></div>
+          </form>
+        </div>
+        <div class="display">
+          <div class="previous-display" previous-operand></div>
+          <div class="current-display" current-operand></div>
+        </div>
+        <div class="calculator-box">
+          <button class="number-operation" number-button>7</button>
+          <button class="number-operation" number-button>8</button>
+          <button class="number-operation" number-button>9</button>
+          <button class="del-reset" delete-button>del</button>
+          <button class="number-operation" number-button>4</button>
+          <button class="number-operation" number-button>5</button>
+          <button class="number-operation" number-button>6</button>
+          <button class="number-operation" operation-button>+</button>
+          <button class="number-operation" number-button>1</button>
+          <button class="number-operation" number-button>2</button>
+          <button class="number-operation" number-button>3</button>
+          <button class="number-operation" operation-button>-</button>
+          <button class="number-operation" number-button>.</button>
+          <button class="number-operation" number-button>0</button>
+          <button class="number-operation" operation-button>/</button>
+          <button class="number-operation" operation-button>x</button>
+          <button class="del-reset span-2" reset-button>reset</button>
+          <button class="equal span-2" equal-button>=</button>
+        </div>
+      </section>
+      <footer>
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io/?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >.
+        </p>
+        <p>
+          Coded by
+          <a href="https://github.com/sportiz91" target="_blank">Lasantoneta</a
+          >.
+        </p>
+      </footer>
+    </div>
+
+    <script src="./js/calculator.js"></script>
+    <script src="./js/changetheme.js"></script>
+  </body>
+</html>
